@@ -4,6 +4,8 @@
         {% for aktivnost in object_list %}
             <li>
                 Naziv: {{ aktivnost.naziv }}<br>
+                Voditelji aktivnosti: <br/>{% for voditelj in aktivnost.voditelji_aktivnosti.all %}{{ voditelj }}<br/>{% endfor %}
+                <br>
                 Opis: {{ aktivnost.opis }}<br>
                 Vrijeme početka: {{ aktivnost.vrijeme_pocetka }}<br>
                 Vrijeme planiranog završetka: {{ aktivnost.vrijeme_zavrsetka }}<br>

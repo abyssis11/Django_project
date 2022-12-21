@@ -17,6 +17,9 @@ class RacunaloFactory(DjangoModelFactory):
 class ProstorijaFactory(DjangoModelFactory):
     class Meta:
         model = Prostorija
+        # da bude unique
+        django_get_or_create = ('glavno_racunalo',)
+
     broj_prostorije = factory.Faker("random_int", max=50)
     kat = factory.Faker("random_int", max=10)
     naziv_prostorije = factory.Faker("sentence", nb_words=4)
@@ -38,6 +41,5 @@ class AktivnostFactory(DjangoModelFactory):
     opis = factory.Faker("sentence", nb_words=25)
     vrijeme_pocetka =  factory.Faker("date_time")
     vrijeme_zavrsetka = factory.Faker("date_time")
-    #voditelji_aktivnosti =
     prostorija_izvodjenja = factory.Iterator(Prostorija.objects.all())
 

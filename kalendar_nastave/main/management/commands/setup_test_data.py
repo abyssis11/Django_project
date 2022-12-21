@@ -15,6 +15,8 @@ NUM_RACUNALA = 140
 NUM_PROSTORIJA = 140
 NUM_VODITELJA = 400
 NUM_AKTIVNOSTI = 550
+# Max voditelja aktivnosti
+NUM_VODITELJA_AKTIVNOSTI = 3
 
 class Command(BaseCommand):
     help = "Generates test data"
@@ -28,6 +30,7 @@ class Command(BaseCommand):
 
         self.stdout.write("Creating new data...")
 
+        voditelji = []
         for _ in range(NUM_RACUNALA):
             racunalo = RacunaloFactory()
 
@@ -36,6 +39,14 @@ class Command(BaseCommand):
         
         for _ in range(NUM_VODITELJA):
              voditelj = VoditeljFactory()
-             
+             voditelji.append(voditelj)
+
         for _ in range(NUM_AKTIVNOSTI):
-             aktivnost = AktivnostFactory()
+            aktivnost = AktivnostFactory()
+
+            # za many-to-many vezu
+            va = random.choices(
+                voditelji,
+                k = NUM_VODITELJA_AKTIVNOSTI
+            )
+            aktivnost.voditelji_aktivnosti.add(*va)

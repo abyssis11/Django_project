@@ -1,0 +1,14 @@
+{% block content %}
+    <h2>Prostorije</h2>
+    <ul>
+        {% for prostorija in object_list %}
+            <li>
+                Broj prostorije: {{ prostorija.broj_prostorije }}<br>
+                Kat: {{ prostorija.kat }}<br>
+                Naziv prostorije: {{ prostorija.naziv_prostorije }}<br>
+                Glavno računalo: {{ prostorija.glavno_racunalo }}<br>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

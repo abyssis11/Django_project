@@ -1,0 +1,15 @@
+{% block content %}
+    <h2>Računala</h2>
+    <ul>
+        {% for racunalo in object_list %}
+            <li>
+                Id: {{ racunalo.id_racunala }}<br>
+                Marka: {{ racunalo.marka }}<br>
+                Tip: {{ racunalo.tip }}<br>
+                Operacijski sustav: {{ racunalo.operacijski_sustav }}<br>
+                Spojen na mrežu: {{ racunalo.mreza }}<br>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

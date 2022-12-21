@@ -1,0 +1,15 @@
+{% block content %}
+    <h2>Aktivnosti</h2>
+    <ul>
+        {% for aktivnost in object_list %}
+            <li>
+                Naziv: {{ aktivnost.naziv }}<br>
+                Opis: {{ aktivnost.opis }}<br>
+                Vrijeme početka: {{ aktivnost.vrijeme_pocetka }}<br>
+                Vrijeme planiranog završetka: {{ aktivnost.vrijeme_zavrsetka }}<br>
+                Prostorija izvodjenja: {{ aktivnost.prostorija_izvodjenja }}<br>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

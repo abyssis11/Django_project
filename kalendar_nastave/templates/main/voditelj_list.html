@@ -1,0 +1,15 @@
+{% block content %}
+    <h2>Voditelji</h2>
+    <ul>
+        {% for voditelj in object_list %}
+            <li>
+                Ime: {{ voditelj.ime }}<br>
+                Prezime: {{ voditelj.prezime }}<br>
+                Email: {{ voditelj.email }}<br>
+                Adresa: {{ voditelj.adresa }}<br>
+                Telefon: {{ voditelj.telefon }}<br>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

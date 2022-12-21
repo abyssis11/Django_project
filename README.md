@@ -1,7 +1,7 @@
-Izradili:
+# Izradili:
 Deni Kernjus
 Dino Ladavac
 
-Tema:
+# Tema:
 Kalendar Aktivnosti
 

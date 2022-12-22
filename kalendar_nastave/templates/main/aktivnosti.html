@@ -1,10 +1,18 @@
+{% extends "base_generic.html" %}
 {% block content %}
     <h2>Aktivnosti</h2>
+    <form method="POST" action="{% url 'main:aktivnosti' %}">
+        {% csrf_token %}
+        <!--as_p renderiramo form kao <p>-->
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
     <ul>
-        {% for aktivnost in object_list %}
+        {% for aktivnost in events %}
             <li>
                 Naziv: {{ aktivnost.naziv }}<br>
-                Voditelji aktivnosti: <br/>{% for voditelj in aktivnost.voditelji_aktivnosti.all %}{{ voditelj }}<br/>{% endfor %}
+                Voditelji aktivnosti: <br/>{% for voditelj in aktivnost.voditelji_aktivnosti.all %}
+                    {{ voditelj.ime }} {{ voditelj.prezime }} ({{ voditelj.email }})<br/>{% endfor %}
                 <br>
                 Opis: {{ aktivnost.opis }}<br>
                 Vrijeme početka: {{ aktivnost.vrijeme_pocetka }}<br>

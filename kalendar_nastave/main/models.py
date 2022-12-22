@@ -14,7 +14,6 @@ class Voditelj(models.Model):
 
 class Racunalo(models.Model):
     id_racunala=models.IntegerField(primary_key=True, default=1)
-    #id_racunala=models.CharField(primary_key=True, default='#1')
     marka = models.CharField(max_length=10)
     tip = models.CharField(max_length=20)
     operacijski_sustav = models.CharField(max_length=20)

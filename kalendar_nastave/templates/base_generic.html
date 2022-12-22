@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <h1>My library</h1>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/voditelj">Voditelji aktivnosti</a></li>
+            <li><a href="/aktivnosti">Aktivnosti</a></li>
+            <li><a href="/prostorija">Prostorije</a></li>
+            <li><a href="/racunalo">Računala</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

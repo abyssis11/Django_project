@@ -42,4 +42,4 @@ class AktivnostFactory(DjangoModelFactory):
     vrijeme_pocetka =  factory.Faker("date_time")
     vrijeme_zavrsetka = factory.Faker("date_time")
     prostorija_izvodjenja = factory.Iterator(Prostorija.objects.all())
-
+    # voditelji_aktivnosti se popunjava u setup_test_data.py
